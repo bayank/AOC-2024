@@ -9,12 +9,15 @@ def read_list(file_name):
             list2.append(num2)
     return list1, list2
 
-if __name__ == "__main__":
-    l, r = read_list("day1_input.txt")
+def day1(filename):
+    l, r = read_list(filename)
     sorted_l=sorted(l)
     sorted_r=sorted(r)
 
     diffs = []
     for i in range(len(sorted_l)):
         diffs.append(abs(sorted_r[i] - sorted_l[i]))
-    print(sum(diffs))
+    return sum(diffs)
+
+if __name__ == "__main__":
+    print(f'Day 1 Answer: {day1("day1_input.txt")}')
